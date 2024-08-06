@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="577.0" prefWidth="753.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.musicplayer.musicplayer.ListSongOfPlaylist">
+   <children>
+      <AnchorPane layoutY="298.0" prefHeight="366.0" prefWidth="753.0" style="-fx-border-radius: 15;" styleClass="bottomPaneOfSongNode" stylesheets="@Style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <HBox layoutX="-25.0" layoutY="-21.0" prefHeight="35.0" prefWidth="753.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="32.0" text="#" textFill="#aeabab">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label prefHeight="35.0" prefWidth="619.0" text="TITLE" textFill="#aeabab">
+                     <font>
+                        <Font name="Berlin Sans FB" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ImageView fitHeight="21.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                     <image>
+                        <Image url="@images/time.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="50.0" top="7.0" />
+                     </HBox.margin>
+                     <effect>
+                        <Shadow height="0.0" radius="0.0" width="0.0">
+                           <color>
+                              <Color red="0.621052622795105" green="0.5773489475250244" blue="0.5773489475250244" />
+                           </color>
+                        </Shadow>
+                     </effect>
+                  </ImageView>
+               </children>
+            </HBox>
+            <Line endX="609.7999877929688" layoutX="127.0" layoutY="42.0" startX="-112.59999084472656" stroke="#665e5e" />
+            <ScrollPane fx:id="scrollSong" layoutX="14.0" layoutY="43.0" prefHeight="318.0" prefWidth="739.0" style="-fx-background-color: none;" styleClass="scrollPane" stylesheets="@Style.css" AnchorPane.rightAnchor="0.0">
+               <content>
+                  <GridPane fx:id="gridSong" prefHeight="0.0" prefWidth="25.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+         </children></AnchorPane>
+      <AnchorPane prefHeight="211.0" prefWidth="753.0" styleClass="colorOfSongsNode" stylesheets="@Style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="nameOfPlaylist" alignment="TOP_LEFT" layoutX="23.0" layoutY="32.0" prefHeight="59.0" prefWidth="353.0" text="Your Playlist" textFill="#695151">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="48.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="48.0" fitWidth="60.0" layoutX="23.0" layoutY="114.0" onMouseClicked="#clickToPlayPlaylist" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/playButton.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="addSong" fitHeight="59.0" fitWidth="48.0" layoutX="140.0" layoutY="114.0" onMouseClicked="#handleAddSong" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/add1.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <Shadow height="0.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color red="0.15789473056793213" green="0.1257309913635254" blue="0.1257309913635254" />
+                     </color>
+                  </Shadow>
+               </effect>
+            </ImageView>
+            <ImageView fx:id="remove" fitHeight="59.0" fitWidth="48.0" layoutX="270.0" layoutY="114.0" onMouseClicked="#handleRemove" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/delete.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <Shadow height="0.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color red="0.34210526943206787" green="0.2930068373680115" blue="0.2930068373680115" />
+                     </color>
+                  </Shadow>
+               </effect>
+            </ImageView>
+            <ImageView fx:id="refresh" fitHeight="59.0" fitWidth="48.0" layoutX="395.0" layoutY="114.0" onMouseClicked="#handleRefresh" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/refresh.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <Shadow height="0.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color red="0.34210526943206787" green="0.2930068373680115" blue="0.2930068373680115" />
+                     </color>
+                  </Shadow>
+               </effect>
+            </ImageView>
+            <Label alignment="TOP_LEFT" layoutX="249.0" layoutY="165.0" prefHeight="20.0" prefWidth="102.0" text="Remove Playlist" textFill="#ac9393">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="11.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" top="4.0" />
+               </padding>
+            </Label>
+            <Label alignment="TOP_LEFT" layoutX="104.0" layoutY="165.0" prefHeight="20.0" prefWidth="132.0" text="Add song into Playlist" textFill="#ac9393">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="11.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" top="4.0" />
+               </padding>
+            </Label>
+            <Label alignment="TOP_LEFT" layoutX="28.0" layoutY="165.0" prefHeight="20.0" prefWidth="38.0" text="Play" textFill="#ac9393">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="11.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" top="3.0" />
+               </padding>
+            </Label>
+            <AnchorPane layoutX="630.0" layoutY="15.0" opacity="0.89" prefHeight="35.0" prefWidth="101.0" style="-fx-background-color: rgba(15, 14, 14, 0.8); -fx-background-radius: 30;" styleClass="frameUser" stylesheets="@Style.css">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="77.0" style="-fx-background-color: none;" styleClass="frameUser" stylesheets="@Style.css" text="User" textFill="#f2eaea">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="11.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/AvtUser.png" />
+                           </image>
+                           <effect>
+                              <Shadow height="0.0" radius="0.0" width="0.0">
+                                 <color>
+                                    <Color red="0.7263157963752747" green="0.6886549592018127" blue="0.6886549592018127" />
+                                 </color>
+                              </Shadow>
+                           </effect>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="71.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/caret_down.png" />
+                     </image>
+                     <effect>
+                        <Shadow height="0.0" radius="0.0" width="0.0">
+                           <color>
+                              <Color red="1.0" green="0.9814814925193787" blue="0.9814814925193787" />
+                           </color>
+                        </Shadow>
+                     </effect>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <Label alignment="TOP_LEFT" layoutX="368.0" layoutY="165.0" prefHeight="20.0" prefWidth="102.0" text="Refresh Playlist" textFill="#ac9393">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="11.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" top="4.0" />
+               </padding>
+            </Label>
+            <Label fx:id="alert" layoutX="599.0" layoutY="159.0" prefHeight="32.0" prefWidth="132.0" textFill="#e8e5e5">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

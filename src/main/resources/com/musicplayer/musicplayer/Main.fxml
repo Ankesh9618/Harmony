@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="963.0" styleClass="mainPage" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.musicplayer.musicplayer.HomeController">
+   <children>
+      <AnchorPane layoutX="197.0" layoutY="27.0" prefHeight="62.0" prefWidth="203.0" AnchorPane.bottomAnchor="609.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="760.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="6.0" layoutY="3.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" y="2.0">
+               <image>
+                  <Image url="@images/pinkLogo.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></ImageView>
+            <Label layoutX="61.0" layoutY="6.0" prefHeight="35.0" prefWidth="150.0" text="Harmony" textFill="2b2b2b">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="50.0" prefHeight="441.0" prefWidth="200.0" AnchorPane.bottomAnchor="93.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="66.0">
+         <children>
+            <VBox layoutX="20.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Button fx:id="homeBtn" alignment="TOP_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#Home" prefHeight="30.0" prefWidth="201.0" style="-fx-background-color: none;" styleClass="sidebarItem" stylesheets="@Style.css" text="Home" textAlignment="CENTER" textFill="#2b2b2b">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/dash1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets left="12.0" top="5.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="yourSongsbtn" alignment="TOP_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#createSong" prefHeight="26.0" prefWidth="208.0" style="-fx-background-color: transparent;" styleClass="sidebarItem" stylesheets="@Style.css" text="Songs" textAlignment="CENTER" textFill="#2b2b2b">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/song.png" />
+                           </image>
+                           <effect>
+                              <Shadow height="1.0" radius="0.0" width="0.0">
+                                 <color>
+                                    <Color red="0.800000011920929" green="0.7940740585327148" blue="0.7940740585327148" />
+                                 </color>
+                              </Shadow>
+                           </effect>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets left="12.0" top="5.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="createPlaylistbtn" alignment="TOP_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#createPlaylistPane" prefHeight="26.0" prefWidth="208.0" style="-fx-background-color: none;" styleClass="sidebarItem" stylesheets="@Style.css" text="Create Playlist" textAlignment="CENTER" textFill="#2b2b2b">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/add1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets left="12.0" top="5.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Line endX="100.0" startX="-100.0" stroke="#434141">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Line>
+               </children>
+            </VBox>
+            <AnchorPane fx:id="PlaylistSideBarPane" layoutY="117.0" prefHeight="308.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" layoutX="1.0" prefHeight="392.0" prefWidth="201.0">
+                     <children>
+                        <HBox prefHeight="40.0" prefWidth="201.0">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="TOP" prefHeight="42.0" prefWidth="203.0" text="Your Playlist" textFill="#999797">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Label>
+                              <Button fx:id="btnRefresh" minHeight="8.0" minWidth="25.0" mnemonicParsing="false" onAction="#RefreshPlaylist" prefHeight="24.0" prefWidth="36.0" style="-fx-background-color: none;" textFill="#f5f5f5">
+                                 <font>
+                                    <Font size="1.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <ScrollPane fx:id="scrollPlaylistSidebar" pannable="true" prefHeight="375.0" prefWidth="171.0" style="-fx-background-color: black;" styleClass="scrollPane" stylesheets="@Style.css">
+                           <content>
+                              <GridPane fx:id="gridPlaylistSidebar" alignment="TOP_CENTER" gridLinesVisible="true" prefHeight="38.0" prefWidth="191.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                              </GridPane>
+                           </content></ScrollPane>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children></AnchorPane>
+      <AnchorPane fx:id="MainPane" layoutX="203.0" prefHeight="577.0" prefWidth="753.0" style="-fx-background-color: rgba(43, 41, 42, 0.8);" AnchorPane.bottomAnchor="93.0" AnchorPane.leftAnchor="203.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="0.0" />
+      <AnchorPane fx:id="panePlayMusic" layoutY="581.0" prefHeight="95.0" prefWidth="963.0" style="-fx-background-color: rgba(19, 16, 17, 0.8);" AnchorPane.bottomAnchor="-5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="581.0" />
+   </children>
+</AnchorPane>

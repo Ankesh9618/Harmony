@@ -1,0 +1,28 @@
+.playlistSideBar:hover{
+    -fx-text-fill: white;
+}
+.sidebarItem:hover{
+    /*-fx-text-fill: #bfbfbf;*/
+    -fx-text-fill: #d2c9c9;
+}
+.scrollPane .viewport {
+    -fx-background-color: transparent;
+    -fx-control-inner-background: transparent;
+}
+
+.colorOfSongsNode {
+    -fx-background-color: linear-gradient(to top, #3498db, #2ecc71);
+
+
+}
+.bottomPaneOfSongNode {
+    -fx-background-color: #403B4A;
+}
+.song:hover{
+    -fx-background-color: #544f4f;
+}
+
+.mainPage{
+	-fx-background-image:url('images/background.jpg');
+	-fx-background-size: 100% 100%; 
+}
